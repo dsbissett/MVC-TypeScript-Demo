@@ -1,0 +1,225 @@
+﻿<div class="row" ng-controller="app.page1.Controller as vm">
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Service Address</div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-5">
+                            <label class="control-label">Street Number</label>
+                        </div>
+                        <div class="col-lg-4 col-lg-offset-3">
+                            <input class="form-control" ng-model="vm.serviceAddress.streetNumber" type="text" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Address</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.serviceAddress.address" type="text" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Address 2</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.serviceAddress.address2" type="text" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">City</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.serviceAddress.city" type="text" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">State</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.serviceAddress.state" type="text" readonly />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Postal Code</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.serviceAddress.postalCode" type="text" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Billing Address</div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-lg-5">
+                            <label class="control-label">Street Number</label>
+                        </div>
+                        <div class="col-lg-4 col-lg-offset-3">
+                            <input class="form-control" ng-model="vm.billingAddress.streetNumber" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Address</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.billingAddress.address" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Address 2</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.billingAddress.address2" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">City</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.billingAddress.city" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">State</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.billingAddress.state" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-4">
+                            <label class="control-label">Postal Code</label>
+                        </div>
+                        <div class="col-lg-8">
+                            <input class="form-control" ng-model="vm.billingAddress.postalCode" type="text" />
+                        </div>
+                    </div>
+                    <hr />
+                    <button type="button" class="btn btn-default" ng-click="vm.setBillingAddressToServiceAddress()" style="width: 100%">Same as Service Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Options</div>
+            <div class="panel-body">                
+                <div class="col-lg-12">
+                    <div class="form-horizontal">                        
+                        <div class="form-group">
+                            <label class="col-lg-6 control-label" for="option001">Install Type</label>
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label for="option001-0">
+                                        <input type="radio" name="option001" id="option001-0" value="true" ng-model="vm.panelOptions.isResidential">
+                                        Residential
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="option001-1">
+                                        <input type="radio" name="option001" id="option001-1" value="false" ng-model="vm.panelOptions.isResidential">
+                                        Commercial
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-hide="vm.panelOptions.isResidential === null">
+                            <label class="col-lg-6 control-label" for="options002">Panel Type</label>
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label for="options002-1">
+                                        <input type="radio" name="options002" id="options002-1" value="Impassa" ng-model="vm.panelOptions.panelType">
+                                        Option one
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="options002-2">
+                                        <input type="radio" name="options002" id="options002-2" value="PowerSeries" ng-model="vm.panelOptions.panelType">
+                                        Option two
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="options002-3">
+                                        <input type="radio" name="radios" id="options002-3" value="Existing" ng-model="vm.panelOptions.panelType">
+                                        Option three
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-hide="vm.panelOptions.isResidential === null || vm.panelOptions.panelType !== 'Impassa'">
+                            <label class="col-lg-6 control-label" for="radios">Option Group One</label>
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label for="options003-1">
+                                        <input type="radio" name="radios" id="options003-1" value="1">
+                                        Option one
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="options003-2">
+                                        <input type="radio" name="radios" id="options003-2" value="2">
+                                        Option two
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-hide="vm.panelOptions.isResidential === null || vm.panelOptions.panelType !== 'PowerSeries'">
+                            <label class="col-lg-6 control-label" for="radios">Option Group Two</label>
+                            <div class="col-lg-6">
+                                <div class="radio">
+                                    <label for="options004-1">
+                                        <input type="radio" name="radios" id="options004-1" value="1" checked="checked">
+                                        Option one
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="options004-2">
+                                        <input type="radio" name="radios" id="options004-2" value="2">
+                                        Option two
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label for="options004-3">
+                                        <input type="radio" name="radios" id="options004-3" value="3">
+                                        Option three
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <form name="frmExisting" ng-hide="vm.panelOptions.isResidential === null || vm.panelOptions.panelType !== 'Existing'" novalidate>
+                            <div ng-class="{'has-error': frmExisting.txtModelNo.$invalid && !frmExisting.txtModelNo.$pristine }" class="form-group">
+                                <label class="col-lg-4 control-label" for="modelNo">Model #:</label>
+                                <div class="col-lg-8">
+                                    <input id="modelNo" name="txtModelNo" type="text" placeholder="placeholder" class="form-control" ng-model="vm.panelOptions.existingOptions.model" required>
+                                    <span class="help-block" ng-show="frmExisting.txtModelNo.$invalid && !frmExisting.txtModelNo.$pristine">Model number is required!</span>
+                                </div>
+                            </div>
+                            <div ng-class="{'has-error': frmExisting.txtSerialNo.$invalid && !frmExisting.txtSerialNo.$pristine }" class="form-group">
+                                <label class="col-lg-4 control-label" for="serialNo">Serial #:</label>
+                                <div class="col-lg-8">
+                                    <input id="serialNo" name="txtSerialNo" type="text" placeholder="placeholder" class="form-control" ng-model="vm.panelOptions.existingOptions.serial" required>
+                                    <span class="help-block" ng-if="frmExisting.txtSerialNo.$invalid && !frmExisting.txtSerialNo.$pristine">Serial number is required!</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
